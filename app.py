@@ -27,6 +27,13 @@ def send_to_telegram(data):
     except Exception as e:
         print(f"Ошибка отправки в ТГ: {e}")
 
+# Этот блок кода нужно добавить в ваш файл bt.py, на одном уровне с другими маршрутами.
+
+@app.route('/', methods=['GET'])
+def health_check():
+    """Эндпоинт для проверки работоспособности бота."""
+    return 'OK', 200
+
 
 @app.route("/", methods=["POST"])
 def handle_post():
